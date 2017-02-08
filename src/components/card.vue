@@ -1,6 +1,6 @@
 <template>
   <mu-card>
-    <mu-card-header title="苏俊文" subTitle="You may say I'm a dreamer,but I'm not the only one.">
+    <mu-card-header title="阿炳" subTitle="You may say I'm a dreamer,but I'm not the only one.">
       <mu-avatar :src="myron" slot="avatar"/>
     </mu-card-header>
     <mu-card-media title="Image Title" subTitle="Image Sub Title">

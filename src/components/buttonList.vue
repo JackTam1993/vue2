@@ -2,13 +2,14 @@
   <div id="drawer">
     <mu-drawer left :open="open" @close="toggle()" width="20%">
       <mu-appbar title="NodeJS" class="red-title"/>
+      <mu-snackbar v-if="snackbar" message="爱的供养，再问自杀" action="关闭"/>
       <mu-list>
         <mu-list-item title="Menu Item 1" href="#/app"/>
         <mu-list-item title="Menu Item 2" href="#/hello"/>
         <mu-list-item title="Menu Item 3" href="#/card"/>
-        <mu-list-item title="Menu Item 1" href="#/app"/>
+        <mu-list-item title="Menu Item 1" href="#/table"/>
         <mu-list-item title="Menu Item 2" href="#/hello"/>
-        <mu-list-item title="Menu Item 3" @click="closeSide()"/>
+        <mu-list-item title="Menu Item 3" @click="showSnack()"/>
         <mu-list-item title="Menu Item 1" href="#/app"/>
         <mu-list-item title="Menu Item 2" href="#/hello"/>
         <mu-list-item title="Menu Item 3" @click="closeSide()"/>
@@ -46,12 +47,20 @@
   export default {
     data () {
       return {
-        open: true
+        open: true,
+      snackbar:false
       }
     },
     methods: {
       toggle () {
         this.open = !this.open
+      },
+      showSnack(){
+        this.snackbar = true;
+        var self = this;
+        setTimeout(function () {
+          self.snackbar = false;
+        },2000)
       }
     },
     mounted(){

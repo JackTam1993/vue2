@@ -1,5 +1,5 @@
 <template>
-  <appbar @click="addNum()"></appbar>
+  <appbar class="fixed"></appbar>
 </template>
 
 <script>
@@ -23,3 +23,9 @@
     }
   }
 </script>
+<style>
+  .fixed{
+    position: fixed;
+    z-index: 999;
+  }
+</style>
