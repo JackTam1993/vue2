@@ -23,8 +23,8 @@ Vue.use(VueRouter);
 const routes = [
   {path:'/app',component:App},
   {path:'/hello',component:Hello},
+  {path:'/card',component:card},
   {path:'*',component:App},
-  {path:'/card',component:card}
 ];
 
 const router = new VueRouter({

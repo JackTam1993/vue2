@@ -1,6 +1,6 @@
 <template>
   <mu-card>
-    <mu-card-header title="Myron Avatar" subTitle="sub title">
+    <mu-card-header title="苏俊文" subTitle="You may say I'm a dreamer,but I'm not the only one.">
       <mu-avatar :src="myron" slot="avatar"/>
     </mu-card-header>
     <mu-card-media title="Image Title" subTitle="Image Sub Title">
@@ -14,15 +14,15 @@
       找到阳光与阴影奏出和谐的旋律。我要用一颗敏感赤诚的心迎接每一缕滑过指尖的阳光！
     </mu-card-text>
     <mu-card-actions>
-      <mu-flat-button label="Action 1"/>
-      <mu-flat-button label="Action 2"/>
+      <mu-raised-button label="赞" icon="favorite"/>
+      <mu-raised-button label="评论" icon="chat"/>
     </mu-card-actions>
   </mu-card>
 </template>
 
 <script>
-//  import img from '../../../assets/images/sun.jpg'
-//  import myron from '../../../assets/images/uicon.jpg'
+  import img from '../../static/img/maple.jpg'
+  import myron from '../../static/img/icon.jpg'
   export default {
     name:'card',
     data () {
