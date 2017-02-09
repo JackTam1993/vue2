@@ -2,15 +2,14 @@
   <div id="drawer">
     <mu-drawer left :open="open" @close="toggle()" width="20%">
       <mu-appbar title="NodeJS" class="red-title"/>
-      <mu-snackbar v-if="snackbar" message="爱的供养，再问自杀" action="关闭"/>
       <mu-list>
-        <mu-list-item title="Menu Item 1" href="#/app"/>
-        <mu-list-item title="Menu Item 2" href="#/hello"/>
-        <mu-list-item title="Menu Item 3" href="#/card"/>
-        <mu-list-item title="Menu Item 1" href="#/table"/>
-        <mu-list-item title="Menu Item 2" href="#/hello"/>
-        <mu-list-item title="Menu Item 3" @click="showSnack()"/>
-        <mu-list-item title="Menu Item 1" href="#/app"/>
+        <mu-list-item title="app" href="#/app"/>
+        <mu-list-item title="hello" href="#/hello"/>
+        <mu-list-item title="card" href="#/card"/>
+        <mu-list-item title="table" href="#/table"/>
+        <mu-list-item title="grid" href="#/grid"/>
+        <mu-list-item title="showSnack" @click="showSnack()"/>
+        <mu-list-item title="flex" href="#/flex"/>
         <mu-list-item title="Menu Item 2" href="#/hello"/>
         <mu-list-item title="Menu Item 3" @click="closeSide()"/>
         <mu-list-item title="Menu Item 1" href="#/app"/>
@@ -56,11 +55,12 @@
         this.open = !this.open
       },
       showSnack(){
-        this.snackbar = true;
-        var self = this;
-        setTimeout(function () {
-          self.snackbar = false;
-        },2000)
+        bus.$emit('showSnackbar',1);
+//        this.snackbar = true;
+//        var self = this;
+//        setTimeout(function () {
+//          self.snackbar = false;
+//        },2000)
       }
     },
     mounted(){

@@ -8,6 +8,8 @@ import buttonList from 'components/buttonList.vue'
 import appbar from './header.vue'
 import card from 'components/card.vue'
 import table from 'components/table.vue'
+import grid from 'components/grid.vue'
+import flex from 'components/flex.vue'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-teal.min.css' // 使用 carbon 主题
@@ -28,6 +30,8 @@ const routes = [
   {path:'/hello',component:Hello},
   {path:'/card',component:card},
   {path:'/table',component:table},
+  {path:'/grid',component:grid},
+  {path:'/flex',component:flex},
   {path:'*',component:App},
 ];
 
