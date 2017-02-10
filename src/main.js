@@ -14,10 +14,21 @@ import table from './fullTable.vue'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-teal.min.css' // 使用 carbon 主题
-import 'material-design-icons'
+import Vuex from 'vuex'
 Vue.use(MuseUI);
 Vue.use(VueRouter);
+Vue.use(Vuex);
 
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+});
 
 /* eslint-disable no-new */
 // new Vue({
@@ -47,7 +58,7 @@ const app = new Vue({
 new Vue({
   el:'#buttonList',
   template:'<buttonList/>',
-  components:{ buttonList }
+  components:{ buttonList,store }
 });
 
 new Vue({
@@ -55,5 +66,4 @@ new Vue({
   template:'<appbar/>',
   components:{ appbar }
 });
-
 

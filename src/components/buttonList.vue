@@ -11,7 +11,7 @@
         <mu-list-item title="showSnack" @click="showSnack()"/>
         <mu-list-item title="flex" href="#/flex"/>
         <mu-list-item title="Menu Item 2" href="#/hello"/>
-        <mu-list-item title="Menu Item 3" @click="closeSide()"/>
+        <mu-list-item title="vuex" @click="showVuex()"/>
         <mu-list-item title="Menu Item 1" href="#/app"/>
         <mu-list-item title="Menu Item 2" href="#/hello"/>
         <mu-list-item title="Menu Item 3" @click="closeSide()"/>
@@ -61,6 +61,10 @@
 //        setTimeout(function () {
 //          self.snackbar = false;
 //        },2000)
+      },
+      showVuex(){
+        //store.commit('increment');
+        console.log(this.store);
       }
     },
     mounted(){

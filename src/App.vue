@@ -3,7 +3,7 @@
     <mu-badge :content="num1" class="demo-icon-badge" circle secondary>
       <mu-icon value="notifications"/>
     </mu-badge>
-    <mu-badge :content="num2" circle secondary>
+    <mu-badge :content="count" circle secondary>
       <mu-icon-button icon="notifications" @click="add"/>
     </mu-badge>
     <timepicker></timepicker>
@@ -28,6 +28,11 @@
     },
     components:{
       timepicker
+    },
+    computed:{
+      count(){
+        return this.$store;
+      }
     }
   }
 </script>
