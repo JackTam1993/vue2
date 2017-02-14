@@ -15,20 +15,21 @@ import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 import 'muse-ui/dist/theme-teal.min.css' // 使用 carbon 主题
 import Vuex from 'vuex'
+import store from './store'
 Vue.use(MuseUI);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  }
-});
+// const store = new Vuex.Store({
+//   state: {
+//     count: 1
+//   },
+//   mutations: {
+//     increment (state) {
+//       state.count++
+//     }
+//   }
+// });
 
 /* eslint-disable no-new */
 // new Vue({
@@ -52,13 +53,14 @@ const router = new VueRouter({
 });
 
 const app = new Vue({
-  router
+  router,
+  store
 }).$mount('#app');
 
 new Vue({
   el:'#buttonList',
   template:'<buttonList/>',
-  components:{ buttonList,store }
+  components:{ buttonList }
 });
 
 new Vue({

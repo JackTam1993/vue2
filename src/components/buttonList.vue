@@ -42,6 +42,7 @@
 
 <script>
   import {bus} from '../bus'
+  import store from '../store'
 
   export default {
     data () {
@@ -64,7 +65,8 @@
       },
       showVuex(){
         //store.commit('increment');
-        console.log(this.store);
+        console.log(store.state.count);
+        store.commit('increment')
       }
     },
     mounted(){
