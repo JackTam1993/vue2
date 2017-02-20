@@ -7,23 +7,26 @@
       <mu-icon-button icon="notifications" @click="add"/>
     </mu-badge>
     <timepicker></timepicker>
+    <span>{{num3 | filter1}}</span>
   </div>
 
 </template>
 <script>
   import timepicker from 'components/TimePicker.vue';
+  import store from './store'
 
   export default {
     data () {
       return {
-        num1:'2',
-        num2:'1'
+        num1:'1',
+        num2:'2',
+        num3:'3'
       }
     },
-    props:['content'],
+    props:[''],
     methods:{
-      add:function (val) {
-      console.log(val);
+      add:function () {
+        store.commit('increment')
       }
     },
     components:{
@@ -31,7 +34,15 @@
     },
     computed:{
       count(){
-        return this.$store;
+        return store.state.count;
+      }
+    },
+    filters:{
+      filter1:function (val) {
+        if(val == 3){
+          return val+'gg';
+        }
+        return val+'mm';
       }
     }
   }
